@@ -7,18 +7,15 @@ import { Quantity } from "../QuantityField";
 
 export const Cart = () => {
   const { products, total } = useContext(ShopContext);
-  const uniqueProducts = products.filter((product, index, self) =>
-  self.findIndex(p => p.name === product.name) === index
-);
-  const [prods, setProd] = useState(uniqueProducts);
+
 
 
 
   return (
     <>
-      <Title>Your cart total is {total}.00$</Title>
+      <Title>Your cart total is ${total}.00</Title>
       <ProductsWrapper>
-        {uniqueProducts.map((product: Product, index) => (
+        {products.map((product: Product, index) => (
           <ProductsWrap><ProductCard {...product} key={index} /><Quantity {...product} key={index}></Quantity></ProductsWrap>
         ))}
       
