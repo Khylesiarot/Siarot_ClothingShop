@@ -12,7 +12,7 @@ import { useState, useEffect, useContext } from 'react';
 import { ShopContext} from '../Context/useContext';
 import {FaHeart, FaRegHeart, FaCartPlus, FaShoppingCart} from 'react-icons/fa';
 
-export const ProductCard = ({ name, imageUrl, price,quantity }: Product) => {
+export const ProductCard = ({ name, imageUrl, price }: Product) => {
   const {products, saved,removeItem,addToCart,removeToWL,addToWL} = useContext(ShopContext);
   const [isInCart, setIsInCart] = useState(false);
   const [isInWish, setIsInWish] = useState(false);
@@ -37,7 +37,7 @@ export const ProductCard = ({ name, imageUrl, price,quantity }: Product) => {
   }, [products, saved,name]);
   
   const handleCart = () => {
-    const product = {name, imageUrl, price, quantity};
+    const product = {name, imageUrl, price};
     if(isInCart){
       removeItem(product);
      
@@ -48,7 +48,7 @@ export const ProductCard = ({ name, imageUrl, price,quantity }: Product) => {
   }
 
   const handleWish = () => {
-    const product = {name, imageUrl, price, quantity};
+    const product = {name, imageUrl, price};
     if(isInWish){
       removeToWL(product);
     
