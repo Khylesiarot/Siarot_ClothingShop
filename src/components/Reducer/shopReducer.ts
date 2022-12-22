@@ -8,7 +8,6 @@ export const shopReducer = (state: ShopState, action: ShopAction) => {
         ...state,
         products: action.payload,
       };
-
     case ShopActionType.REMOVE:
       return {
         ...state,
@@ -20,6 +19,17 @@ export const shopReducer = (state: ShopState, action: ShopAction) => {
         ...state,
         total: action.payload,
       };
+
+      case ShopActionType.SAVED:
+        return {
+          ...state,
+          saved: action.payload,
+        };
+        case ShopActionType.ERASE:
+          return {
+            ...state,
+            saved: action.payload,
+          };
     default:
       return state;
   }
