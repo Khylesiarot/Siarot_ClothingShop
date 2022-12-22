@@ -4,7 +4,7 @@ export type ShopState = {
     saved: Product[];
     products: Product[],
     total: number,
-    priceProd: number,
+    totalitems: number,
     addToCart: any,
     removeItem: any,
     addToWL: any,
@@ -18,7 +18,7 @@ export const initialState = {
     saved: [],
     products: [],
     total: 0,
-    priceProd : 0,
+    totalitems: 0,
     addToCart: null,
     removeItem: null,
     addToWL: null,
