@@ -5,7 +5,7 @@ import { Cart } from "../Cart";
 import { Products } from "../Products";
 import { ShopContext } from "../Context/useContext";
 import { useReducer } from "react";
-import { add, erase, initialState, remove, save, shopReducer, update } from "../Reducer";
+import { add, addQtty, erase, initialState, remove, save, shopReducer, update } from "../Reducer";
 import { Product } from "../../models";
 import { Wishlist } from "../Wishlist";
 
@@ -32,7 +32,7 @@ export const App = () => {
   const updatePrice = (products: [] = []) => {
     let total = 0;
     products.forEach(
-      (product: { price: number }) => (total = total + product.price)
+      (product: { price: number, quantity: number }) => (total = total + (product.price * product.quantity) )
     );
 
     dispatch(update(total));
@@ -51,19 +51,30 @@ export const App = () => {
     dispatch(erase(updatedCart));
   };
 
+  const updateCart = (product: Product, quantity : number) => {
+    const updatedCart =state.products.map((items: { name: string; }) =>
+    items.name === product.name? { ...items, quantity: quantity } : items);
+    dispatch(addQtty(updatedCart));
+   
+    
+    updatePrice(updatedCart);
+  };
 
 
 
 
   
   const value = {
+    priceProd: state.addToWL,
     total: state.total,
     products: state.products,
     saved: state.saved,
     addToCart,
     removeItem,
     addToWL,
-    removeToWL
+    removeToWL,
+    updatePrice,
+    updateCart,
   };
   return (
     <ShopContext.Provider value={value}>

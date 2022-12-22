@@ -5,7 +5,8 @@ export enum ShopActionType {
     REMOVE = 'remove',
     UPDATE = 'update',
     SAVED = 'save',
-    ERASE = 'erase'
+    ERASE = 'erase',
+    UPDATETOT = 'addQtty'
   }
   
   export type ShopAction = {
@@ -37,3 +38,11 @@ export enum ShopActionType {
     type: ShopActionType.ERASE,
     payload: product,
   });
+
+
+  export const addQtty = (priceProd: number): ShopAction => ({
+    type: ShopActionType.UPDATETOT,
+    payload: priceProd,
+  });
+
+ 
