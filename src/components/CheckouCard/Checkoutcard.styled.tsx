@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   box-shadow: 0 20px 40px rgba(52, 53, 99, 0.2), 0 1px 3px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   position: relative;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 export const ImgWrapper = styled.div<WrapperProps>`
@@ -53,6 +53,7 @@ export const Title = styled.p`
   margin: 0;
   color: #bb7250;
   margin-bottom: 10px;
+  margin-left: 10px;
 `;
 
 export const SubTitle = styled.p`

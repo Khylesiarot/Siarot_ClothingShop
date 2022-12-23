@@ -15,7 +15,7 @@ export const Checkout = () => {
   return (
     <>
     <Title>
-        Items ready for checkout
+         { products.length > 0 ? " Items ready for checkout ": " Empty! Add an item to your cart "}
     </Title>
     <ProductsWrapper>
         {products.map((product: Product, index) => (

@@ -36,6 +36,8 @@ export const App = () => {
     updatePrice(updatedCart);
 
     dispatch(remove(updatedCart));
+
+
   };
 
   const updatePrice = (products: [] = []) => {
