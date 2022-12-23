@@ -81,3 +81,18 @@ text-align: end;
   color: #000;
   margin: 0;
 `;
+
+export const PlaceOrder = styled.div`
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(52, 53, 99, 0.2);
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+  color : white;
+  background-color: #965b3f ;
+`;

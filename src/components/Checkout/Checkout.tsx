@@ -3,7 +3,7 @@ import { Product } from "../../models";
 import { CheckoutCard } from "../CheckouCard";
 
 import { ShopContext } from "../Context/useContext";
-import { Labels, PriceContainer, ProductsWrapper, Title, Total, TotalAmount, TotalAmountLabel, TotalItems, TotalItemsLabel } from "./Checkout.styled";
+import { Labels, PlaceOrder, PriceContainer, ProductsWrapper, Title, Total, TotalAmount, TotalAmountLabel, TotalItems, TotalItemsLabel } from "./Checkout.styled";
 
 export const Checkout = () => {
   const { products, total, totalitems } = useContext(ShopContext);
@@ -32,7 +32,7 @@ export const Checkout = () => {
           <TotalItems>{totalitems}</TotalItems>
         </PriceContainer>
       </Total>
-
+      <PlaceOrder>Place Order</PlaceOrder>
     </>
   );
 };
